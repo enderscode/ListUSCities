@@ -118,6 +118,16 @@ public class CityListFragment extends ListFragment {
         @Override
         protected ArrayList<City> doInBackground(Void... voids) {
 
+        /*I finished really late the program, so there would be more improvements tat i would like 
+        to implement in this part, right now I'm preloading the first 100 rows, refreshing the listview
+        and then, read completely the file and refreshing it again. One improvement would be not to read
+        again the first rows, and do it everything in only one method.
+        
+        Another improvement that I would like to do, but I didn't have time would be to create a synchronise
+        collection shared between the threads, to populate it by the file reader, and refreshing the listview.
+        But having that the exercise wasn't too complicated, and that I'm only populating Strings (it takes 0.3s
+        to populate the list completely), just making a preload and when the read is complete a refresh with
+        everything, is just working OK*/
             try {
                 cities = Util.loadFile(getResources().openRawResource(R.raw.uscities),100);
                 setListAdapter(new CityAdapter());
